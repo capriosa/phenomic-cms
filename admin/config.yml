@@ -3,17 +3,19 @@ backend:
   repo: capriosa/mdwp-phenomic # Gulp will replace this with your GitHub repository
   branch: master # Branch to update (master by default)
 
-public_folder: "content" # the same as your phenomic.source in your package.json
-media_folder: "content/assets" # the same as your phenomic.assets in your package.json
+public_folder: "content"
+media_folder: "content/assets" # Folder where user uploaded files should go
 
-collections:
-  - name: "post"
-    label: "Post"
-    folder: "content/posts" # a subfolder of your public_folder
-    create: true
-    card: {type: "alltype", text: "title"}
-    fields:
+collections: # A list of collections the CMS should be able to edit
+  - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Post" # Used in the UI, ie.: "New Post"
+    folder: "content/posts" # The path to the folder where the documents are stored
+    sort: "date:desc" # Default is title:asc
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}"
+    fields: # The fields each document in this collection have
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
-    meta:
-      - {label: "Publish Date", name: "date", widget: "datetime"}
+    meta: # Meta data fields. Just like fields, but without any preview element
+      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"}
+    card: {type: "alltype", text: "title"}
