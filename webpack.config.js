@@ -163,6 +163,9 @@ export default (config = {}) => {
     },
 
     plugins: [
+      new CopyWebpackPlugin([
+        {from: 'admin', to: 'admin'},
+      ]),
       // You should be able to remove the block below when the following
       // issue has been correctly handled (and postcss-loader supports
       // "plugins" option directly in query, see postcss-loader usage above)
