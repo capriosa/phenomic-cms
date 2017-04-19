@@ -3,7 +3,7 @@ title: Welcome back to the future of static website!
 date: 2016-02-14T00:00:00.000Z
 layout: Post
 hero: 'https://farm8.staticflickr.com/7479/15669216853_aa8e70eae1_o.jpg'
-cover: /assets/Content Manager.png
+cover: /assets/ContentManager.png
 ---
 
 <!-- start lipsum code -->
@@ -21,4 +21,5 @@ Hi. Now Biff, don't con me. Of course I do. Just a second, let's see if I could 
 
 
 <!-- end lipsum code -->
+
 
