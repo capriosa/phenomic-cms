@@ -1,5 +1,6 @@
-# Global settings applied to the whole site.
 [build]
-  base    = "site"
-  publish = "dist"
   command = "npm run build"
+  publish = "dist"
+
+[context.deploy-preview]
+command = "npm run build-preview"
