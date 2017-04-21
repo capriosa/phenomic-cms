@@ -1,0 +1,5 @@
+# Global settings applied to the whole site.
+[build]
+  base    = "https://mdwp-phenomic.netlify.com"
+  publish = "dist"
+  command = "npm run build"
