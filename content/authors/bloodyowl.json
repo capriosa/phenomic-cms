@@ -1,0 +1,21 @@
+{
+  "twitter": "bloodyowl",
+  "fr": {
+    "bio": {
+      "short": "Lead développeur front-end @ BeOpinion.",
+      "long": [
+        "Lead développeur front-end @ BeOpinion.",
+        "Joue avec JavaScript & HTML (et déteste CSS)."
+      ]
+    }
+  },
+  "en": {
+    "bio": {
+      "short": "Lead front-end developer @ BeOpinion",
+      "long": [
+        "Lead front-end developer @ BeOpinion.",
+        "Plays with JavaScript & HTML (and hates CSS)."
+      ]
+    }
+  }
+}

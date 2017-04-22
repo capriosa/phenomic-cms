@@ -1,0 +1,21 @@
+{
+  "twitter": "zoontek",
+  "fr": {
+    "bio": {
+      "short": "Développeur web & mobile @ Colisweb.",
+      "long": [
+        "Développeur web & mobile @ Colisweb.",
+        "JS, Scala, Ruby, whatever works."
+      ]
+    }
+  },
+  "en": {
+    "bio": {
+      "short": "Web & mobile developer @ Colisweb.",
+      "long": [
+        "Web & mobile developer @ Colisweb.",
+        "JS, Scala, Ruby, whatever works."
+      ]
+    }
+  }
+}

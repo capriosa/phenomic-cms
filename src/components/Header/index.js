@@ -1,38 +1,51 @@
 import React, { PropTypes } from "react"
-import { Link } from "react-router"
+import { Link } from "phenomic"
+import Svg from "react-svg-inline"
 
-import getI18n from "../../i18n/get"
-import getLang from "../../i18n/getLang"
-import Navigation from "../Navigation"
-import SVGInline from "react-svg-inline"
+import twitterSvg from "../icons/iconmonstr-twitter-1.svg"
+import gitHubSvg from "../icons/iconmonstr-github-1.svg"
 
-const Header = ({}, context) => {
-  const i18n = getI18n(context)
+import styles from "./index.css"
 
-  return (
-    <div className="putainde-Header">
-      <div className="r-Grid">
-        <div className="r-Grid-cell r-minM--1of3">
-          <Link className="putainde-SiteTitle" to={`/${getLang(context)}/`}>
-            <SVGInline
-              className="putainde-Logo"
-              svg={require("../../images/putaindecode-logo.svg")}
-              cleanupExceptions={[ "fill" ]}
-            />
-            <span>{i18n.title}</span>
-          </Link>
-        </div>
-        <div className="r-Grid-cell r-minM--2of3">
-          <Navigation />
-        </div>
+const Header = (props, { metadata: { pkg } }) => (
+  <header className={ styles.header }>
+    <nav className={ styles.nav }>
+      <div className={ styles.navPart1 }>
+        <Link
+          className={ styles.link }
+          to={ "/" }
+        >
+          { "Home" }
+        </Link>
       </div>
-    </div>
-  )
-}
+      <div className={ styles.navPart2 }>
+        {
+          pkg.twitter &&
+          <a
+            href={ `https://twitter.com/${pkg.twitter}` }
+            className={ styles.link }
+          >
+            <Svg svg={ twitterSvg } cleanup />
+            { "Twitter" }
+          </a>
+        }
+        {
+          pkg.repository &&
+          <a
+            href={ pkg.repository }
+            className={ styles.link }
+          >
+            <Svg svg={ gitHubSvg } cleanup />
+            { "GitHub" }
+          </a>
+        }
+      </div>
+    </nav>
+  </header>
+)
 
 Header.contextTypes = {
   metadata: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
 }
 
 export default Header

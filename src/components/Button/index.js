@@ -1,31 +1,30 @@
-import React from "react"
+import React, { PropTypes } from "react"
 import cx from "classnames"
-import { PropTypes } from "react"
 
-import classes from "./styles.css"
+import styles from "./index.css"
 
-const Component = (props) => {
-  const { small, block, ...otherProps } = props
-  return (
-    <button
-      { ...otherProps }
-      className={cx({
-        [classes.component]: true,
-        [classes.componentBlock]: block,
-        [classes.componentSmall]: small,
-      })}
-    >
-      { props.children }
-    </button>
-  )
-}
+const Button = ({ className, secondary, light, big, ...otherProps }) => (
+  <span
+    role="button"
+    { ...otherProps }
+    className={ cx({
+      [className]: className,
+      [styles.button]: true,
+      [styles.secondary]: secondary,
+      [styles.light]: light,
+      [styles.big]: big,
+    }) }
+  />
+)
 
-Component.propTypes = {
+Button.propTypes = {
   children: PropTypes.node,
-  block: PropTypes.bool,
-  small: PropTypes.bool,
+  className: PropTypes.string,
+  secondary: PropTypes.bool,
+  light: PropTypes.bool,
+  big: PropTypes.bool,
 }
 
-Component.displayName = "Button"
+Button.displayName = "Button"
 
-export default Component
+export default Button
