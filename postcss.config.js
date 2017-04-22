@@ -1,25 +1,27 @@
-module.exports = (config) => [
-    require("stylelint")(),
-    require("postcss-cssnext")({
-      browsers: "last 2 versions",
+module.exports = {
+  plugins: {
+    "postcss-import": {},
+    "postcss-cssnext": {
       features: {
         customProperties: {
           variables: {
-            maxWidth: "60rem",
-            colorPrimaryDark: "#107491",
-            colorPrimary: "#007acc",
-            colorSecondaryDark: "#22846C",
-            colorSecondary: "#46BE77",
-            colorNeutralDark: "#111",
-            colorNeutral: "#8C8D91",
-            colorNeutralLight: "#FBFCFC",
-            colorText: "#555",
+            colorRed: "#c33",
+            colorLightGrey: "#ebeef0",
+          },
+        },
+        customMedia: {
+          extensions: {
+            maxS: "(max-width: 30em)",
+            minS: "(min-width: 30.01em)",
+            maxM: "(max-width: 50em)",
+            minM: "(min-width: 50.01em)",
+            maxL: "(max-width: 65em)",
+            minL: "(min-width: 65.01em)",
+            maxXL: "(max-width: 80em)",
+            minXL: "(min-width: 80.01em)",
           },
         },
       },
-    }),
-    require("postcss-reporter")(),
-    ...!config.production ? [
-      require("postcss-browser-reporter")(),
-    ] : [],
-  ]
+    },
+  },
+}

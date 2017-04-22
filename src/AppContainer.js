@@ -1,27 +1,41 @@
 import React, { PropTypes } from "react"
+import Helmet from "react-helmet"
 
-import "./index.global.css"
-import "./highlight.global.css"
-
-import Container from "./components/Container"
-import DefaultHeadMeta from "./components/DefaultHeadMeta"
+import getLang from "./i18n/getLang"
+import getI18n from "./i18n/get"
 import Header from "./components/Header"
-import Content from "./components/Content"
 import Footer from "./components/Footer"
+import GoogleAnalyticsTracker from "./components/GoogleAnalyticsTracker"
 
-const AppContainer = (props) => (
-  <Container>
-    <DefaultHeadMeta />
-    <Header />
-    <Content>
-      { props.children }
-    </Content>
-    <Footer />
-  </Container>
-)
+const Layout = ({ children, params }, context) => {
+  const i18n = getI18n(context)
+  const locale = getLang(context)
 
-AppContainer.propTypes = {
-  children: PropTypes.node,
+  return (
+    <div className="r-VerticalRhythm" lang={ locale }>
+      <GoogleAnalyticsTracker params={ params }>
+        <Helmet
+          meta={[
+            { property: "og:site_name", content: i18n.title },
+            { name: "twitter:site", content: `@${ i18n.twitterUsername }` },
+          ]}
+        />
+        <Header />
+        { children }
+        <Footer />
+      </GoogleAnalyticsTracker>
+    </div>
+  )
 }
 
-export default AppContainer
+Layout.propTypes = {
+  children: PropTypes.oneOfType([ PropTypes.array, PropTypes.object ]),
+  params: PropTypes.object,
+}
+
+Layout.contextTypes = {
+  metadata: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+}
+
+export default Layout

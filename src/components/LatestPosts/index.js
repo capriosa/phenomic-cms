@@ -1,36 +1,58 @@
 import React, { PropTypes } from "react"
-import enhanceCollection from "phenomic/lib/enhance-collection"
+import { Link } from "react-router"
 
-import PagesList from "../../components/PagesList"
+import classes from "./styles.css"
 
-import styles from "./index.css"
+import getI18n from "../../i18n/get"
+import PostsList from "../PostsList"
 
-const defaultNumberOfPosts = 6
-
-const LatestPosts = (props, { collection }) => {
-  const latestPosts = enhanceCollection(collection, {
-    filter: { layout: "Post" },
-    sort: "date",
-    reverse: true,
-  })
-  .slice(0, props.numberOfPosts || defaultNumberOfPosts)
+const LatestPosts = ({ link, posts, title }, context) => {
+  const i18n = getI18n(context)
 
   return (
     <div>
-      <h2 className={ styles.latestPosts }>
-        { "Latest Posts" }
-      </h2>
-      <PagesList pages={ latestPosts } />
+      <div className="putainde-Title putainde-Title--home">
+        <h2 className="putainde-Title-text">
+          { title ? title : i18n.latestPosts }
+        </h2>
+      </div>
+      <div
+        className={ "r-Grid-cell r-minL--5of12 " + classes.latestPosts }
+        style={ { textAlign: "left" } }
+      >
+        <PostsList posts={ posts.slice(0, posts.length / 2) } />
+      </div>
+      <div
+        className={ "r-Grid-cell r-minL--5of12 " + classes.latestPosts }
+        style={ { textAlign: "left" } }
+      >
+        <PostsList posts={ posts.slice(posts.length / 2) } />
+      </div>
+      <div
+        className={ "r-Grid-cell r-minL--10of12 " + classes.latestPosts }
+        style={ { textAlign: "left" } }
+      >
+        <Link
+          to={ link ? link : i18n.links.articles }
+          className="putainde-Button putainde-Button--block"
+          style={ { textAlign: "center" } }
+        >
+          { i18n.morePosts }
+        </Link>
+      </div>
     </div>
   )
 }
 
 LatestPosts.propTypes = {
-  numberOfPosts: PropTypes.number,
+  posts: PropTypes.arrayOf(PropTypes.object).isRequired,
+  title: PropTypes.string,
+  link: PropTypes.string,
 }
 
 LatestPosts.contextTypes = {
-  collection: PropTypes.array.isRequired,
+  metadata: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
 }
 
 export default LatestPosts

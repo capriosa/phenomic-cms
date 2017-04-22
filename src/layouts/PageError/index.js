@@ -1,46 +1,84 @@
 import React, { PropTypes } from "react"
+import Helmet from "react-helmet"
 
-import Page from "../Page"
+import getI18n from "../../i18n/get"
 
-import styles from "./index.css"
+const PageError = ({}, context) => {
+  const i18n = getI18n(context)
+  const { metadata } = context
+  const httpRepository = metadata.pkg.repository.replace(/\.git$/, "")
+  const title = i18n.PageError.title
 
-const PageError = ({ error, errorText }) => (
-  <Page
-    head={{
-      // hero credit: https://www.flickr.com/photos/mypubliclands/16101654539/
-      hero: "https://farm8.staticflickr.com/7559/16101654539_bee5151340_k.jpg",
-    }}
-  >
-    <div className={ styles.container }>
-      <div className={ styles.oops }>{ "😱 Oooops!" }</div>
-      <div className={ styles.text }>
-        <p className={ styles.title }>
-          <strong>{ error }</strong>
-          { " " }
-          { errorText }
-        </p>
-        {
-          error === 404 &&
-          <div>
-            { "It seems you found a broken link. " }
-            { "Sorry about that. " }
-            <br />
-            { "Do not hesitate to report this page 😁." }
+  return (
+    <div className="putainde-Main">
+      <Helmet
+        title={ title }
+        meta={[
+          { property: "og:title", content: title },
+          { name: "twitter:title", content: title },
+        ]}
+      />
+      <div className="r-Grid putainde-Post">
+        <div className="r-Grid-cell r-minM--8of12">
+          <div
+            className="putainde-Post-contents"
+            style={{ textAlign: "center" }}
+          >
+            {
+              title &&
+              <div className="putainde-Title">
+                <h1 className="putainde-Title-text">
+                  {title}
+                </h1>
+              </div>
+            }
+
+            <div
+              style={{ margin: "2rem 0" }}
+            >
+              { i18n.PageError.contentMissing }
+              <br />
+              { i18n.PageError.report }
+              <a
+                href={
+                  httpRepository +
+                  "/issues/new?title=" +
+                  "Page not found" +
+                  "&body=" +
+                  (
+                    typeof window !== "undefined"
+                    ? window.location.href
+                    : ""
+                  )
+                }
+              >
+                  { i18n.PageError.reportLink }
+              </a>
+              <img
+                alt=""
+                src="http://www.reactiongifs.com/r/sywht1.gif"
+                style={ {
+                  width: "100%",
+                  margin: "1rem auto",
+                } }
+              />
+            </div>
+
           </div>
-        }
+        </div>
       </div>
     </div>
-  </Page>
-)
-
-PageError.propTypes = {
-  error: PropTypes.oneOfType([ PropTypes.number, PropTypes.string ]),
-  errorText: PropTypes.string,
+  )
 }
 
 PageError.defaultProps = {
   error: 404,
   errorText: "Page Not Found",
+}
+
+PageError.contextTypes = {
+  metadata: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
 }
 
 export default PageError
