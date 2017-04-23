@@ -10,7 +10,6 @@ import styles from "./index.css"
 
 const Page = (
   {
-    isLoading,
     __filename,
     __url,
     head,
