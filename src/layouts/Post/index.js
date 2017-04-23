@@ -17,16 +17,15 @@ const Post = (props) => {
           <header className={ styles.header }>
             {
               pageDate &&
-              <time key={ pageDate.toISOString() }>
-                { pageDate.toDateString() }
+              <time key={ pageDate.toLocaleDateString() }>
+                { pageDate.toLocaleDateString() }
               </time>
             }
           </header>
         </div>
       }
     >
-      <hr />
-      <LatestPosts />
+      
     </Page>
   )
 }
