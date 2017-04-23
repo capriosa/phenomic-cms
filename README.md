@@ -1,19 +1,16 @@
-# [Phenomic](https://github.com/MoOx/phenomic) phenomic-theme-base
+# phenomic-cms
 
-## Install dependencies
+This is an experimental project based on Phenomic a react.js Static Site Generator.
+The project integrates the Netlify-CMS with Phenomic.
 
-```sh
-npm install
-```
+<a href="https://app.netlify.com/start/deploy?repository=https://github.com/capriosa/mdwp-phenomic"> <img src="https://www.netlify.com/img/deploy/button.svg" title="Deploy to Netlify"> </a>
 
-## Run development server
+If you use the *Deploy to netlify* button, please read this document on how to authenticate your Netlify site with Github.
+<a href="https://www.netlifycms.org/docs/test-drive/">Authenticate with GitHub</a>
 
-```sh
-npm start
-```
+After that change the repo name in the config.yml in the admin directory.
 
-## Build for production
-
-```sh
-npm run build
-```
+    backend:  
+     name: github  
+     repo: capriosa/mdwp-phenomic #user/repo  
+     branch: master
