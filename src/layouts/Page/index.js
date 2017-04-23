@@ -4,7 +4,7 @@ import warning from "warning"
 import { BodyContainer, joinUri, Link } from "phenomic"
 
 import Button from "../../components/Button"
-import Loading from "../../components/Loading"
+
 
 import styles from "./index.css"
 
@@ -94,7 +94,6 @@ const Page = (
 
 Page.propTypes = {
   children: PropTypes.node,
-  isLoading: PropTypes.bool,
   __filename: PropTypes.string,
   __url: PropTypes.string,
   head: PropTypes.object.isRequired,
