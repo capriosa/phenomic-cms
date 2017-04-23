@@ -82,9 +82,8 @@ const Page = (
         { header }
         <div className={ styles.body }>
           {
-            isLoading
-            ? <Loading />
-            : <BodyContainer>{ body }</BodyContainer>
+            
+            <BodyContainer>{ body }</BodyContainer>
           }
         </div>
         { children }
