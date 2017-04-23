@@ -5,10 +5,6 @@ layout: Post
 hero: 'https://farm8.staticflickr.com/7479/15669216853_aa8e70eae1_o.jpg'
 cover: /assets/ContentManager.png
 ---
-
-<!-- start lipsum code -->
-<!-- http://www.deloreanipsum.com/ -->
-
 Ahh. Hey, Doc, we better back up, we don't have enough roads to get up to 88. Hi. Where were we. In that case, I'll tell you strait out.
 
 Thank you, don't forget to take a flyer. Look, I'm just not ready to ask Lorraine out to the dance, and not you, nor anybody else on this planet is gonna make me change my mind. Over there, on my hope chest. I've never seen purple underwear before, Calvin. What's with the life preserver? Working.
@@ -21,5 +17,6 @@ Hi. Now Biff, don't con me. Of course I do. Just a second, let's see if I could 
 
 
 <!-- end lipsum code -->
+
 
 
