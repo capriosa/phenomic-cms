@@ -12,5 +12,5 @@ After that change the repo name in the config.yml in the admin directory.
 
     backend:  
      name: github  
-     repo: capriosa/mdwp-phenomic #user/repo  
+     repo: capriosa/phenomic-cms #user/repo  
      branch: master

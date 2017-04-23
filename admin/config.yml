@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: capriosa/mdwp-phenomic
+  repo: capriosa/phenomic-cms
   branch: master
 
 public_folder: "/assets"
