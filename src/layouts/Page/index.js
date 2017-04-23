@@ -80,10 +80,10 @@ const Page = (
       <div className={ styles.wrapper + " " + styles.pageContent }>
         { header }
         <div className={ styles.body }>
-          {
+          
             
             <BodyContainer>{ body }</BodyContainer>
-          }
+          
         </div>
         { children }
         { footer }
