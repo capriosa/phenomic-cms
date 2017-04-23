@@ -3,7 +3,7 @@
   "name": "phenomic-cms",
   "homepage": "http://mdwp-phenomic.netlify.com",
   "twitter": "mdwp",
-  "repository": "capriosa/mdwp-phenomic",
+  "repository": "https://github.com/capriosa/mdwp-phenomic",
   "scripts": {
     "lint:js": "eslint --ignore-path .gitignore --fix .",
     "lint:css": "stylelint \"src/**/*.css\"",
