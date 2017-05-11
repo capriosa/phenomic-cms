@@ -1,7 +1,7 @@
 ---
 title: Netlify-CMS integration
-cover: /assets/mdwp.png
-layout: Post
+hero: /assets/mdwp.png
+layout: Homepage
 date: 2017-05-11T20:53:17.268Z
 ---
 ## Authenticate with GitHub to work with the Netlify-CMS
