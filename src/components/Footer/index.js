@@ -18,7 +18,7 @@ const Footer = () => (
         <span className={ styles.phenomicReferenceName }>
 	<a
          href={ `/admin` }
-            className={ styles.link { styles.phenomicReference }
+            className={ styles.phenomicReference }
 	>
         Login to CMS
     </a></span>
