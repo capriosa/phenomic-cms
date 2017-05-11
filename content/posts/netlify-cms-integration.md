@@ -36,6 +36,3 @@ After that, change the repo name in the config.yml in the admin directory.
 
 With the site deployed and authentication in place, you’ll be able to
 enter the CMS by going to the URL of your new site and appending `/admin`.
-
-
-
