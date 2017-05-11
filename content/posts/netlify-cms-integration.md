@@ -1,8 +1,5 @@
 ---
 cover: /assets/ContentManager.png
-cta:
-  label: Netlify-CMS
-  url: 'https://netlifycms.org'
 title: Netlify-CMS integration
 hero: /assets/hosting.jpg
 layout: Post
@@ -10,7 +7,7 @@ date: 2017-05-11T20:53:17.268Z
 ---
 ## Authenticate with GitHub to work with the Netlify-CMS
 
-When the deploy completes, you can see your site, but in order to use the CMS, you’ll need to set up authentication with GitHub. 
+When the deploy completes, you can see your site, but in order to use the CMS, you’ll need to set up authentication with GitHub.
 
 First, register the site CMS as an authorized application with your GitHub account:
 
@@ -39,7 +36,5 @@ After that, change the repo name in the config.yml in the admin directory.
 
 With the site deployed and authentication in place, you’ll be able to
 enter the CMS by going to the URL of your new site and appending `/admin`.
-
-
 
 
