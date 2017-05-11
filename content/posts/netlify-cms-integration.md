@@ -3,8 +3,8 @@ cover: /assets/ContentManager.png
 title: Netlify-CMS integration
 hero: /assets/hosting.jpg
 cta:
-  - label: Netlify-CMS
-    url: 'https://netlifycms.org'
+  label: Netlify-CMS
+  url: 'https://netlifycms.org'
 layout: Post
 date: 2017-05-11T20:53:17.268Z
 ---
