@@ -18,6 +18,7 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Hero", name: "hero", widget: "image", optional: true}
+      - {label: CTA, name: cta, widget: list, fields: [{label: Label, name: label, widget: string},{label: URL, name: url, widget: string}]}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Layout", name: "layout", widget: "string", default: "Post"}
       - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD"}
