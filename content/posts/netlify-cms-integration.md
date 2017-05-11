@@ -2,6 +2,9 @@
 cover: /assets/ContentManager.png
 title: Netlify-CMS integration
 hero: /assets/hosting.jpg
+cta:
+  - label: About me
+    url: 'https://www.mdwp.de'
 layout: Post
 date: 2017-05-11T20:53:17.268Z
 ---
@@ -36,3 +39,4 @@ After that, change the repo name in the config.yml in the admin directory.
 
 With the site deployed and authentication in place, you’ll be able to
 enter the CMS by going to the URL of your new site and appending `/admin`.
+
