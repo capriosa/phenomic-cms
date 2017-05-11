@@ -8,9 +8,9 @@ The project integrates the Netlify-CMS with Phenomic.
 If you use the *Deploy to netlify* button, please read this document on how to authenticate your Netlify site with Github.
 <a href="https://www.netlifycms.org/docs/test-drive/">Authenticate with GitHub</a>
 
-After that change the repo name in the config.yml in the admin directory.
+After that, change the repo name in the config.yml in the admin directory.
 
     backend:  
      name: github  
-     repo: capriosa/phenomic-cms #user/repo  
+     repo: user-name/repo-name #user/repo  
      branch: master
