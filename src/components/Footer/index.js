@@ -18,15 +18,15 @@ const Footer = () => (
         <span className={ styles.phenomicReferenceName }>
 	<a
          href={ `/admin` }
-            className={ styles.link }
+            className={ styles.link { styles.phenomicReference }}
 	>
         Login to CMS
     </a></span>
     <span className={ styles.phenomicReferenceName }>
 	
-        Netlify-CMS integration by<a
+          Netlify-CMS integration by<a
     href={ `https://www.mdwp.de` }
-            className={ styles.link }
+            className={ styles.phenomicReference }
 	> mdwp
     </a></span>
     </p>
