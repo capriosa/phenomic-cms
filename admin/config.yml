@@ -17,17 +17,7 @@ collections:
     card: {type: "alltype", text: "title"}
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Cover", name: "cover", widget: "image", optional: true}
+      - {label: "Hero", name: "hero", widget: "image", optional: true}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Layout", name: "layout", widget: "string", default: "Post"}
       - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD"}
-  - name: "settings"
-    label: "Settings"
-    files:
-      - name: "general"
-        label: "General settings"
-        file: "_settings/general.json"
-        fields:
-          - {label: "Main site title", name: "site_title", widget: "string"}
-          - {label: "Number of frontpage posts", name: "post_count", widget: "number"}
-          - {label: "Site cover image", name: "cover", widget: "image"}
