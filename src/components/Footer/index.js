@@ -14,7 +14,13 @@ const Footer = () => (
         <span className={ styles.phenomicReferenceName }>
           {  `<${ process.env.PHENOMIC_NAME} />` }
         </span>
-      </a>
+	</a>
+	<a
+         href={ `/admin}` }
+            className={ styles.link }
+	>
+        Login to CMS
+    </a>
     </p>
   </footer>
 )
