@@ -14,13 +14,13 @@
 
 .hero {
   /* fallback, mainly visible when hero image is loading */
-  background-color: var(--colorSecondary);
+  background-color: var(--colorPrimary);
   /* fallback when there is no hero image */
   background:
     radial-gradient(
       ellipse at 50% 50%,
-      color(var(--colorSecondary) l(+ 10%)) 15%,
-      var(--colorSecondary) 70%
+      color(var(--colorPrimary) l(+ 10%)) 15%,
+      var(--colorPrimary) 70%
     );
 }
 
