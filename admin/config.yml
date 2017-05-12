@@ -17,7 +17,7 @@ collections:
     card: {type: "alltype", text: "title"}
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Hero", name: "hero", widget: "image", optional: true}
+      - {label: "Hero", name: "hero", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Layout", name: "layout", widget: "string", default: "Post"}
       - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD"}
